@@ -10,10 +10,10 @@ class CalcAwt extends WindowAdapter implements ActionListener
    double num1,num2,check; 
    CalcAwt()    
    { 
-        f= new Frame("MY CALCULATOR");  // Create a new Frame with a title "MY CALCULATOR" 
- l1=new Label(); //Create a new label to display results      
- l1.setBackground(Color.LIGHT_GRAY);   //set its background color & position 
- l1.setBounds(50,50,250,50);  //set position & size of the label (x, y,width,height) 
+        f= new Frame("MY CALCULATOR");  
+ l1=new Label(); 
+ l1.setBackground(Color.LIGHT_GRAY);   
+ l1.setBounds(50,50,250,50); 
  
  b7=new Button("7");        b7.setBounds(50,120,50,50);   
  b4=new Button("4");                 b4.setBounds(50,180,50,50); 
@@ -35,7 +35,7 @@ class CalcAwt extends WindowAdapter implements ActionListener
          bsub=new Button("-");       bsub.setBounds(260,240,50,50); 
  badd=new Button("+");      badd.setBounds(260,300,50,50); 
   
- //button presses are handled by the actionPerformed method 
+ 
  b1.addActionListener(this); 
  b2.addActionListener(this); 
  b3.addActionListener(this); 
@@ -54,9 +54,9 @@ class CalcAwt extends WindowAdapter implements ActionListener
  bmult.addActionListener(this); 
  bdiv.addActionListener(this); 
  bcalc.addActionListener(this); 
- //Adds the current instance as the action listener for each button to handle click events 
+
  f.addWindowListener(this);  
-                      // Adding components to the frame 
+                      
  f.add(l1);             f.add(b1);        f.add(b2);       f.add(b3);  
  f.add(b4);              f.add(b5);        f.add(b6);          f.add(b7); 
  f.add(b8);              f.add(b9);        f.add(b0);           
@@ -64,12 +64,12 @@ class CalcAwt extends WindowAdapter implements ActionListener
  f.add(bcalc);          f.add(bpts);           
          f.setSize(360,400);      f.setLayout(null);      f.setVisible(true); 
     } 
-    public void windowClosing(WindowEvent e) // close the frame &  the appln 
+    public void windowClosing(WindowEvent e)
     {    f.dispose();         } 
     public void actionPerformed(ActionEvent e) 
     { 
         String z, zt; 
-        if (e.getSource()==b1)     //Number Button 
+        if (e.getSource()==b1)     
         { 
   zt=l1.getText(); 
   z=zt+"1"; 
@@ -137,7 +137,7 @@ class CalcAwt extends WindowAdapter implements ActionListener
   z=zt+"."; 
   l1.setText(z); 
  } 
- if (e.getSource()==badd)  //For addition 
+ if (e.getSource()==badd)  
  {   
     try 
     {          
@@ -154,7 +154,7 @@ class CalcAwt extends WindowAdapter implements ActionListener
              l1.setText(z); 
            check=1; 
         } 
- if(e.getSource()==bsub)   //For subtraction 
+ if(e.getSource()==bsub)   
  {  
            try 
            {       num1=Double.parseDouble(l1.getText());               } 
@@ -167,7 +167,7 @@ class CalcAwt extends WindowAdapter implements ActionListener
     l1.setText(z); 
     check=2; 
        } 
-       if(e.getSource()==bmult) //For multiplication 
+       if(e.getSource()==bmult) 
        {    
    try 
    {      num1=Double.parseDouble(l1.getText());          } 
@@ -180,7 +180,7 @@ class CalcAwt extends WindowAdapter implements ActionListener
           l1.setText(z); 
           check=3; 
       }      
-    if(e.getSource()==bdiv)  //For division 
+    if(e.getSource()==bdiv)  
      {  
          try 
          {      num1=Double.parseDouble(l1.getText());               
@@ -197,7 +197,7 @@ class CalcAwt extends WindowAdapter implements ActionListener
      } 
  
  
-    if(e.getSource()==bcalc)  //RESULT BUTTON 
+    if(e.getSource()==bcalc)  
     { 
        try 
        {    num2=Double.parseDouble(l1.getText());         } 

@@ -10,7 +10,7 @@ public class ShapeDraw extends Frame implements ItemListener {
         setSize(500, 500); 
         setLayout(new BorderLayout()); 
 
-        // Creating choice component 
+       
         shapeChoice = new Choice();             
         shapeChoice.add("Rectangle"); 
         shapeChoice.add("Triangle");             
@@ -18,9 +18,9 @@ public class ShapeDraw extends Frame implements ItemListener {
         shapeChoice.add("Circle"); 
         shapeChoice.addItemListener(this);       
 
-        add(shapeChoice, BorderLayout.NORTH); // ✅ Fixed capitalization
+        add(shapeChoice, BorderLayout.NORTH); 
 
-        // Creating canvas for drawing 
+   
         canvas = new Canvas() { 
             public void paint(Graphics g) { 
                 drawShape(g, shapeChoice.getSelectedItem()); 
@@ -30,7 +30,7 @@ public class ShapeDraw extends Frame implements ItemListener {
         canvas.setBackground(Color.BLACK);  
         add(canvas, BorderLayout.CENTER);   
 
-        // Closing event 
+      
         addWindowListener(new WindowAdapter() { 
             public void windowClosing(WindowEvent e) {           
                 dispose();            
@@ -52,7 +52,7 @@ public class ShapeDraw extends Frame implements ItemListener {
                 g.drawRect(100, 100, 200, 100); 
                 break; 
 
-            case "Triangle": { // ✅ Enclosed in curly braces
+            case "Triangle": { 
                 int[] x = {150, 250, 350};    
                 int[] y = {200, 100, 200}; 
                 g.drawPolygon(x, y, 3); 
